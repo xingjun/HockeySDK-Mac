@@ -59,7 +59,6 @@ typedef NS_ENUM(NSInteger, BITFeedbackUserDataElement) {
 
 
 @class BITFeedbackMessage;
-@class BITFeedbackWindowController;
 
 
 /**

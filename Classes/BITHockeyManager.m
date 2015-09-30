@@ -267,7 +267,24 @@ NSString *const kBITHockeySDKURL = @"https://sdk.hockeyapp.net/";
     bit_addStringValueToKeychain(userID, kBITDefaultUserID);
   }
 }
-
+- (NSString *)userName {
+    if (self.hockeyDelegate && [self.hockeyDelegate respondsToSelector:@selector(userName)]) {
+        return [self.hockeyDelegate userName];
+    }
+    return @"";
+}
+- (NSString *)userID {
+    if (self.hockeyDelegate && [self.hockeyDelegate respondsToSelector:@selector(userID)]) {
+        return [self.hockeyDelegate userID];
+    }
+    return @"";
+}
+- (NSString *)userEmail {
+    if (self.hockeyDelegate && [self.hockeyDelegate respondsToSelector:@selector(userEmail)]) {
+        return [self.hockeyDelegate userEmail];
+    }
+    return @"";
+}
 - (void)setUserName:(NSString *)userName {
   if (!userName) {
     bit_removeKeyFromKeychain(kBITDefaultUserName);

@@ -38,7 +38,6 @@
 #import <HockeySDK/BITSystemProfile.h>
 
 #import <HockeySDK/BITFeedbackManager.h>
-#import <HockeySDK/BITFeedbackWindowController.h>
 
 
 // Notification message which HockeyManager is listening to, to retry requesting updated from the server

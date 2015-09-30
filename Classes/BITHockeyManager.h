@@ -53,6 +53,13 @@
  @warning You should **NOT** change any module configuration after calling `startManager`!
  
  */
+@protocol HockeyProtocol <NSObject>
+
+- (NSString *)userName;
+- (NSString *)userID;
+- (NSString *)userEmail;
+
+@end
 @interface BITHockeyManager : NSObject
 
 #pragma mark - Public Methods
@@ -60,7 +67,10 @@
 ///-----------------------------------------------------------------------------
 /// @name Initialization
 ///-----------------------------------------------------------------------------
-
+@property (nonatomic,assign) id<HockeyProtocol> hockeyDelegate;
+- (NSString *)userName;
+- (NSString *)userID;
+- (NSString *)userEmail;
 /**
  *  Returns the shared manager object
  *

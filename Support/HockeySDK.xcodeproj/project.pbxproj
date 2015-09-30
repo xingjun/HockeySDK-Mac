@@ -35,8 +35,6 @@
 /* Begin PBXBuildFile section */
 		1E20566E15A5F61F008FC20A /* BITCrashManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE1DFFE1524B3D600C0DA76 /* BITCrashManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E260C9F17D414F200C7F9FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E260C9E17D414F200C7F9FE /* Security.framework */; };
-		1E260CA617D41E9100C7F9FE /* BITKeychainItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E260CA417D41E9000C7F9FE /* BITKeychainItem.h */; };
-		1E260CA717D41E9100C7F9FE /* BITKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E260CA517D41E9100C7F9FE /* BITKeychainItem.m */; };
 		1E260CAA17D42B1E00C7F9FE /* BITHockeyManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E260CA917D42B1500C7F9FE /* BITHockeyManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E378AF419586A6900451E28 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E378AF319586A6900451E28 /* QuickLook.framework */; };
 		1E378AF9195899B400451E28 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E378AF8195899B400451E28 /* Quartz.framework */; };
@@ -162,8 +160,6 @@
 		1E260C7F17D401D200C7F9FE /* index.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.md; sourceTree = "<group>"; };
 		1E260C8017D401D200C7F9FE /* Troubleshooting-Symbolication-Doesnt-Work-template.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Troubleshooting-Symbolication-Doesnt-Work-template.md"; sourceTree = "<group>"; };
 		1E260C9E17D414F200C7F9FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		1E260CA417D41E9000C7F9FE /* BITKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITKeychainItem.h; sourceTree = "<group>"; };
-		1E260CA517D41E9100C7F9FE /* BITKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITKeychainItem.m; sourceTree = "<group>"; };
 		1E260CA917D42B1500C7F9FE /* BITHockeyManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BITHockeyManagerDelegate.h; sourceTree = "<group>"; };
 		1E378AF11958498400451E28 /* BITSDKTextViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BITSDKTextViewDelegate.h; sourceTree = "<group>"; };
 		1E378AF319586A6900451E28 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
@@ -328,8 +324,6 @@
 				1E7E5516187F3EE700F0858E /* HockeySDKPrivate.h */,
 				1E7E5517187F3EE700F0858E /* HockeySDKPrivate.m */,
 				1EC2956B1B30572000CD53B2 /* HockeySDKNullability.h */,
-				1E260CA417D41E9000C7F9FE /* BITKeychainItem.h */,
-				1E260CA517D41E9100C7F9FE /* BITKeychainItem.m */,
 				1EBDC04F195716F300B5C8A3 /* BITSDKColoredView.h */,
 				1EBDC050195716F300B5C8A3 /* BITSDKColoredView.m */,
 				1EBDF2AF1957878800C7F49A /* BITSDKTextFieldCell.h */,
@@ -580,7 +574,6 @@
 				1E85C5881B343E2100CE2C0D /* PLCrashReportExceptionInfo.h in Headers */,
 				1E20566E15A5F61F008FC20A /* BITCrashManagerDelegate.h in Headers */,
 				1E7E5509187F3ED800F0858E /* BITFeedbackManagerPrivate.h in Headers */,
-				1E260CA617D41E9100C7F9FE /* BITKeychainItem.h in Headers */,
 				1EBDC051195716F300B5C8A3 /* BITSDKColoredView.h in Headers */,
 				1E7E552A187F62B400F0858E /* BITSystemProfilePrivate.h in Headers */,
 				1E85C5811B343E2100CE2C0D /* PLCrashMacros.h in Headers */,
@@ -723,7 +716,6 @@
 				1E7E551E187F3EE700F0858E /* HockeySDKPrivate.m in Sources */,
 				1E5785DC19461DF60014D19A /* BITHockeyAttachment.m in Sources */,
 				1EC715341957524B00F72C19 /* BITFeedbackMessageCellView.m in Sources */,
-				1E260CA717D41E9100C7F9FE /* BITKeychainItem.m in Sources */,
 				1E378B211959D33700451E28 /* BITActivityIndicatorButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

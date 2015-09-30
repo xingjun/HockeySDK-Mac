@@ -767,23 +767,12 @@ static void uncaught_cxx_exception_handler(const BITCrashUncaughtCXXExceptionInf
         if (_crashReportUIHandler) {
           _crashReportUIHandler(crashReport, log);
         } else {
-          _crashReportUI = [[BITCrashReportUI alloc] initWithManager:self
-                                                         crashReport:crashReport
-                                                          logContent:log
-                                                     applicationName:[self applicationName]
-                                                      askUserDetails:_askUserDetails];
-          
-          [_crashReportUI setUserName:[self userNameForCrashReport]];
-          [_crashReportUI setUserEmail:[self userEmailForCrashReport]];
-          
-          if (_crashReportUI.nibDidLoadSuccessfully) {
-            [_crashReportUI askCrashReportDetails];
-            [_crashReportUI showWindow:self];
-            [_crashReportUI.window makeKeyAndOrderFront:self];
-          } else {
-            [self approveLatestCrashReport];
-            [self sendNextCrashReport];
-          }
+            BITCrashMetaData *crashMetaData = [[BITCrashMetaData alloc] init];
+            crashMetaData.userName = [[BITHockeyManager sharedHockeyManager] userName];
+            crashMetaData.userEmail = [[BITHockeyManager sharedHockeyManager] userEmail];
+            crashMetaData.userDescription = [[BITHockeyManager sharedHockeyManager] userID];
+            
+            [self handleUserInput:BITCrashManagerUserInputSend withUserProvidedMetaData:crashMetaData];
         }
       } else {
         [self cleanCrashReportWithFilename:_lastCrashFilename];
@@ -996,9 +985,9 @@ static void uncaught_cxx_exception_handler(const BITCrashUncaughtCXXExceptionInf
                                                 format:&format
                                                 errorDescription:&errorString];
       
-      username = bit_stringValueFromKeychainForKey([NSString stringWithFormat:@"%@.%@", [filename lastPathComponent], kBITCrashMetaUserName]) ?: @"";
-      useremail = bit_stringValueFromKeychainForKey([NSString stringWithFormat:@"%@.%@", [filename lastPathComponent], kBITCrashMetaUserEmail]) ?: @"";
-      userid = bit_stringValueFromKeychainForKey([NSString stringWithFormat:@"%@.%@", [filename lastPathComponent], kBITCrashMetaUserID]) ?: @"";
+        username = [[BITHockeyManager sharedHockeyManager] userName];
+      useremail = [[BITHockeyManager sharedHockeyManager] userEmail];
+      userid = [[BITHockeyManager sharedHockeyManager] userID];
       applicationLog = metaDict[kBITCrashMetaApplicationLog] ?: @"";
       description = metaDict[kBITCrashMetaDescription] ?: @"";
       attachment = [self attachmentForCrashReport:filename];

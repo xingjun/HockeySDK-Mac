@@ -54,7 +54,6 @@
   NSFileManager  *_fileManager;
   NSString       *_settingsFile;
   
-  BITFeedbackWindowController *_feedbackWindowController;
   
   BOOL _didSetupDidBecomeActiveNotifications;
   BOOL _networkRequestInProgress;
@@ -76,7 +75,6 @@
     _lastCheck = nil;
     _token = nil;
     _lastMessageID = nil;
-    _feedbackWindowController = nil;
     _lastRefreshDate = [NSDate distantPast];
     
     _feedbackList = [[NSMutableArray alloc] init];
@@ -131,12 +129,13 @@
 #pragma mark - UI
 
 - (void)showFeedbackWindow {
-  if (!_feedbackWindowController) {
-    _feedbackWindowController = [[BITFeedbackWindowController alloc] initWithManager:self];
-  }
-  
-  [_feedbackWindowController showWindow:self];
-  [_feedbackWindowController.window makeKeyAndOrderFront:self];
+//  if (!_feedbackWindowController) {
+//    _feedbackWindowController = [[BITFeedbackWindowController alloc] initWithManager:self];
+//  }
+//
+    [self submitMessageWithText:@"xjWathsup" andAttachments:@[]];
+//  [_feedbackWindowController showWindow:self];
+//  [_feedbackWindowController.window makeKeyAndOrderFront:self];
 }
 
 
@@ -953,7 +952,8 @@
   [message setToken:[self uuidAsLowerCaseAndShortened]];
   [message setAttachments:attachments];
   [message setUserMessage:YES];
-  
+    [message setName:@"feename"];
+    [message setEmail:@"feeemail"];
   [_feedbackList addObject:message];
   
   [self submitPendingMessages];
